@@ -7,6 +7,7 @@ Basado en https://docs.joomla.org/J3.x:Developing_an_MVC_Component/es
 [02. Añadir un elemento de menu](README.md#02-añadir-un-elemento-de-menu)  
 [03. Añadir un modelo](README.md#03-añadir-un-modelo)  
 [04. Añadir una variable de peticion en el tipo de menu](README.md#04-añadir-una-variable-de-peticion-en-el-tipo-de-menu)  
+[05. Utilizando la base de datos](README.md#05-utilizando-la-base-de-datos)  
 
 ## 00. Inicializar los ficheros
 * Crear el fichero `helloworld.xml`, que indica como instalar el componente `com_helloworld` en Joomla:
@@ -89,15 +90,15 @@ Basado en https://docs.joomla.org/J3.x:Developing_an_MVC_Component/es
 
 ````
 ### Total 9 ficheros:
-01. helloworld.xml
-02. site/index.html
-03. site/helloworld.php
-04. admin/index.html
-05. admin/helloworld.php
-06. admin/sql/index.html
-07. admin/sql/updates/index.html
-08. admin/sql/updates/mysql/index.html
-09. admin/sql/updates/mysql/0.0.1.sql
+1. helloworld.xml
+2. site/index.html
+3. site/helloworld.php
+4. admin/index.html
+5. admin/helloworld.php
+6. admin/sql/index.html
+7. admin/sql/updates/index.html
+8. admin/sql/updates/mysql/index.html
+9. admin/sql/updates/mysql/0.0.1.sql
 ---
 ## 01. Añadir una vista
 * Actualizar el fichero `helloworld.php` en `site/helloworld.php`:  
@@ -272,15 +273,15 @@ Basado en https://docs.joomla.org/J3.x:Developing_an_MVC_Component/es
 	</extension>
 ````
 ### Total 15 ficheros:
-01. helloworld.xml
-02. site/index.html
-03*. _site/controller.php_
-04. site/helloworld.php
-05*. _site/views/index.html_
-06*. _site/views/helloworld/index.html_
-07*. _site/views/helloworld/view.html.php_
-08*. _site/views/helloworld/tmpl/index.html_
-09*. _site/views/helloworld/tmpl/default.php_
+1. helloworld.xml
+2. site/index.html
+3. __site/controller.php__
+4. site/helloworld.php
+5. __site/views/index.html__
+6. __site/views/helloworld/index.html__
+7. __site/views/helloworld/view.html.php__
+8. __site/views/helloworld/tmpl/index.html__
+9. __site/views/helloworld/tmpl/default.php__
 10. admin/index.html
 11. admin/helloworld.php
 12. admin/sql/index.html
@@ -352,16 +353,16 @@ Basado en https://docs.joomla.org/J3.x:Developing_an_MVC_Component/es
 	</extension>
 ````
 ### Total 16 ficheros:
-01. helloworld.xml
-02. site/index.html
-03. site/controller.php
-04. site/helloworld.php
-05. site/views/index.html
-06. site/views/helloworld/index.html
-07. site/views/helloworld/view.html.php
-08. site/views/helloworld/tmpl/index.html
-09. site/views/helloworld/tmpl/default.php
-10*. _site/views/helloworld/tmpl/default.xml_
+1. helloworld.xml
+2. site/index.html
+3. site/controller.php
+4. site/helloworld.php
+5. site/views/index.html
+6. site/views/helloworld/index.html
+7. site/views/helloworld/view.html.php
+8. site/views/helloworld/tmpl/index.html
+9. site/views/helloworld/tmpl/default.php
+10. __site/views/helloworld/tmpl/default.xml__
 11. admin/index.html
 12. admin/helloworld.php
 13. admin/sql/index.html
@@ -524,15 +525,15 @@ Basado en https://docs.joomla.org/J3.x:Developing_an_MVC_Component/es
 	</extension>
 ````
 ### Total 18 ficheros:
-01. helloworld.xml
-02. site/index.html
-03. site/controller.php
-04. site/helloworld.php
-05*. _site/models/index.html_
-06*. _site/models/helloworld.php_
-07. site/views/index.html
-08. site/views/helloworld/index.html
-09. site/views/helloworld/view.html.php
+1. helloworld.xml
+2. site/index.html
+3. site/controller.php
+4. site/helloworld.php
+5. __site/models/index.html__
+6. __site/models/helloworld.php__
+7. site/views/index.html
+8. site/views/helloworld/index.html
+9. site/views/helloworld/view.html.php
 10. site/views/helloworld/tmpl/index.html
 11. site/views/helloworld/tmpl/default.php
 12. site/views/helloworld/tmpl/default.xml
@@ -598,7 +599,7 @@ Basado en https://docs.joomla.org/J3.x:Developing_an_MVC_Component/es
 			if (!isset($this->message))
 			{
 ````
-````xml
+````php
 				$jinput = JFactory::getApplication()->input;
 				$id     = $jinput->get('id', 1, 'INT');
 
@@ -613,7 +614,7 @@ Basado en https://docs.joomla.org/J3.x:Developing_an_MVC_Component/es
 						break;
 				}
 ````
-````xml
+````php
 			}
 			return $this->message;
 		}
@@ -673,6 +674,27 @@ Basado en https://docs.joomla.org/J3.x:Developing_an_MVC_Component/es
 
 	</extension>
 ````
+### Total 18 ficheros:
+1. helloworld.xml
+2. site/index.html
+3. site/controller.php
+4. site/helloworld.php
+5. site/models/index.html
+6. site/models/helloworld.php
+7. site/views/index.html
+8. site/views/helloworld/index.html
+9. site/views/helloworld/view.html.php
+10. site/views/helloworld/tmpl/index.html
+11. site/views/helloworld/tmpl/default.php
+12. site/views/helloworld/tmpl/default.xml
+13. admin/index.html
+14. admin/helloworld.php
+15. admin/sql/index.html
+16. admin/sql/updates/index.html
+17. admin/sql/updates/mysql/index.html
+18. admin/sql/updates/mysql/0.0.1.sql
+---
+## 05. Utilizando la base de datos
 
 
 
