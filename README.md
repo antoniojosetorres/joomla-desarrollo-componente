@@ -91,7 +91,7 @@ Basado en https://docs.joomla.org/J3.x:Developing_an_MVC_Component/es
 07. admin/sql/updates/index.html
 08. admin/sql/updates/mysql/index.html
 09. admin/sql/updates/mysql/0.0.1.sql
-
+---
 ## 01. Añadir una vista
 * Actualizar el fichero `helloworld.php` en `site/helloworld.php`:  
 ````php
@@ -280,7 +280,7 @@ Basado en https://docs.joomla.org/J3.x:Developing_an_MVC_Component/es
 13. admin/sql/updates/index.html
 14. admin/sql/updates/mysql/index.html
 15. admin/sql/updates/mysql/0.0.1.sql
-
+---
 ## 02. Añadir un elemento de menu
 * Crear el fichero `default.xml` en `site/views/helloworld/tmpl/default.xml`, que añade el elemento de menu predeterminado:  
 ````xml
@@ -361,7 +361,7 @@ Basado en https://docs.joomla.org/J3.x:Developing_an_MVC_Component/es
 14. admin/sql/updates/index.html
 15. admin/sql/updates/mysql/index.html
 16. admin/sql/updates/mysql/0.0.1.sql
-
+---
 ## 03. Añadir un modelo
 * Crear la carpeta `models` en `site/models/` y el fichero `index.html` en `site/models/index.html`, que impide que se vea el contenido de la carpeta `models`:
 ````html
@@ -535,7 +535,7 @@ Basado en https://docs.joomla.org/J3.x:Developing_an_MVC_Component/es
 16. admin/sql/updates/index.html
 17. admin/sql/updates/mysql/index.html
 18. admin/sql/updates/mysql/0.0.1.sql
-
+---
 ## 04. Añadir una variable de peticion en el tipo de menu
 * Actualizar el fichero `default.xml` en `site/views/helloworld/tmpl/default.xml`:
 ````xml
@@ -550,12 +550,125 @@ Basado en https://docs.joomla.org/J3.x:Developing_an_MVC_Component/es
 			<fieldset name="request">
 				<field name="id" type="list" label="COM_HELLOWORLD_HELLOWORLD_FIELD_GREETING_LABEL" description="COM_HELLOWORLD_HELLOWORLD_FIELD_GREETING_DESC" default="1">
 					<option value="1">Hello World!</option>
-                    <option value="2">Good bye World!</option>
+					<option value="2">Good bye World!</option>
 				</field>
 			</fieldset>
 		</fields>
 	</metadata>
 ````
+* Actualizar el fichero `helloworld.php` en `site/models/helloworld.php`:
+````php
+	<?php
+	/**
+ 	 * @package     Joomla.Administrator
+ 	 * @subpackage  com_helloworld
+ 	 *
+ 	 * @copyright   Copyright (C) 2005 - 2018 Open Source Matters, Inc. All rights reserved.
+ 	 * @license     GNU General Public License version 2 or later; see LICENSE.txt
+ 	 */
+
+	// No direct access to this file
+	defined('_JEXEC') or die('Restricted access');
+
+	/**
+ 	 * HelloWorld Model
+ 	 *
+ 	 * @since  0.0.1
+ 	 */
+	class HelloWorldModelHelloWorld extends JModelItem
+	{
+		/**
+	 	 * @var string message
+	 	 */
+		protected $message;
+
+		/**
+	 	 * Get the message
+	 	 * @return  string  The message to be displayed to the user
+	 	 */
+		public function getMsg()
+		{
+			if (!isset($this->message))
+			{
+````
+````xml
+				$jinput = JFactory::getApplication()->input;
+				$id     = $jinput->get('id', 1, 'INT');
+
+				switch ($id)
+				{
+					case 2:
+						$this->message = 'Good bye World!';
+						break;
+					default:
+					case 1:
+						$this->message = 'Hello World!';
+						break;
+				}
+````
+````xml
+			}
+			return $this->message;
+		}
+	}
+````
+* Actualizar el fichero `helloworld.xml`:
+````xml
+	<?xml version="1.0" encoding="utf-8"?>
+	<extension type="component" version="3.0" method="upgrade">
+
+		<name>Hello World!</name>
+		<!-- The following elements are optional and free of formatting constraints -->
+		<creationDate>January 2018</creationDate>
+		<author>John Doe</author>
+		<authorEmail>john.doe@example.org</authorEmail>
+		<authorUrl>http://www.example.org</authorUrl>
+		<copyright>Copyright Info</copyright>
+		<license>License Info</license>
+		<!-- The version string is recorded in the components table -->
+````
+````xml
+		<version>0.0.5</version>
+````
+````xml
+		<!-- The description is optional and defaults to the name -->
+		<description>Description of the Hello World component ...</description>
+
+		<update> <!-- Runs on update -->
+			<schemas>
+				<schemapath type="mysql">sql/updates/mysql</schemapath>
+			</schemas>
+		</update>
+
+		<!-- Site Main File Copy Section -->
+		<!-- Note the folder attribute: This attribute describes the folder to copy FROM in the package to install therefore files copied in this section are copied from /site/ in the package -->
+		<files folder="site">
+			<filename>index.html</filename>
+			<filename>helloworld.php</filename>
+			<filename>controller.php</filename>
+			<folder>views</folder>
+			<folder>models</folder>
+		</files>
+
+		<administration>
+			<!-- Administration Menu Section -->
+			<menu link='index.php?option=com_helloworld'>Hello World!</menu>
+			<!-- Administration Main File Copy Section -->
+			<!-- Note the folder attribute: This attribute describes the folder to copy FROM in the package to install therefore files copied in this section are copied from /admin/ in the package -->
+			<files folder="admin">
+				<!-- Admin Main File Copy Section -->
+				<filename>index.html</filename>
+				<filename>helloworld.php</filename>
+				<!-- SQL files section -->
+				<folder>sql</folder>
+			</files>
+		</administration>
+
+	</extension>
+````
+
+
+
 
 
 
