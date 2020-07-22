@@ -275,13 +275,13 @@ Basado en https://docs.joomla.org/J3.x:Developing_an_MVC_Component/es
 ### Total 15 ficheros:
 1. helloworld.xml
 2. site/index.html
-3. __site/controller.php__
+3. ***site/controller.php***
 4. site/helloworld.php
-5. __site/views/index.html__
-6. __site/views/helloworld/index.html__
-7. __site/views/helloworld/view.html.php__
-8. __site/views/helloworld/tmpl/index.html__
-9. __site/views/helloworld/tmpl/default.php__
+5. ***site/views/index.html***
+6. ***site/views/helloworld/index.html***
+7. ***site/views/helloworld/view.html.php***
+8. ***site/views/helloworld/tmpl/index.html***
+9. ***site/views/helloworld/tmpl/default.php***
 10. admin/index.html
 11. admin/helloworld.php
 12. admin/sql/index.html
@@ -362,7 +362,7 @@ Basado en https://docs.joomla.org/J3.x:Developing_an_MVC_Component/es
 7. site/views/helloworld/view.html.php
 8. site/views/helloworld/tmpl/index.html
 9. site/views/helloworld/tmpl/default.php
-10. __site/views/helloworld/tmpl/default.xml__
+10. ***site/views/helloworld/tmpl/default.xml***
 11. admin/index.html
 12. admin/helloworld.php
 13. admin/sql/index.html
@@ -529,8 +529,8 @@ Basado en https://docs.joomla.org/J3.x:Developing_an_MVC_Component/es
 2. site/index.html
 3. site/controller.php
 4. site/helloworld.php
-5. __site/models/index.html__
-6. __site/models/helloworld.php__
+5. ***site/models/index.html***
+6. ***site/models/helloworld.php***
 7. site/views/index.html
 8. site/views/helloworld/index.html
 9. site/views/helloworld/view.html.php
@@ -695,8 +695,100 @@ Basado en https://docs.joomla.org/J3.x:Developing_an_MVC_Component/es
 18. admin/sql/updates/mysql/0.0.1.sql
 ---
 ## 05. Utilizando la base de datos
+* Crear el fichero `install.mysql.utf8.sql` en `admin/sql/install.mysql.utf8.sql`, que se ejecuta cuando se realiza la instalacion del componente `helloworld`:
+````sql
+	DROP TABLE IF EXISTS `#__helloworld`;
 
+	CREATE TABLE `#__helloworld` (
+		`id`		INT(11)     NOT NULL AUTO_INCREMENT,
+		`title`		VARCHAR(25)	NOT NULL,
+		`published` TINYINT(4)	NOT NULL DEFAULT '1',
+		PRIMARY KEY (`id`)
+	) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 DEFAULT COLLATE=utf8mb4_unicode_ci;
 
+	INSERT INTO `#__helloworld` (`greeting`) VALUES ('Hello World!'), ('Good bye World!');
+````
+* Crear el fichero `0.0.6.sql` en `admin/sql/updates/mysql/0.0.6.sql`, que se ejecuta cuando se realiza la actualizacion del componente `helloworld` con el contenido anterior.
+* Crear el archivo `uninstall.mysql.utf8.sql` en `admin/sql/uninstall.mysql.utf8.sql`, que se ejecuta cuando se realiza la desinstalacion del componente `helloworld`:
+````sql
+	DROP TABLE IF EXISTS `#__helloworld`;
+````
+* Actualizar el fichero `helloworld.xml`:
+````xml
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="3.0" method="upgrade">
+
+	<name>Hello World!</name>
+	<!-- The following elements are optional and free of formatting constraints -->
+	<creationDate>January 2018</creationDate>
+	<author>John Doe</author>
+	<authorEmail>john.doe@example.org</authorEmail>
+	<authorUrl>http://www.example.org</authorUrl>
+	<copyright>Copyright Info</copyright>
+	<license>License Info</license>
+	<!--  The version string is recorded in the components table -->
+	<version>0.0.6</version>
+	<!-- The description is optional and defaults to the name -->
+	<description>Description of the Hello World component ...</description>
+
+	<install> <!-- Runs on install -->
+		<sql>
+			<file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+		</sql>
+	</install>
+	<uninstall> <!-- Runs on uninstall -->
+		<sql>
+			<file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+		</sql>
+	</uninstall>
+	<update> <!-- Runs on update; New since J2.5 -->
+		<schemas>
+			<schemapath type="mysql">sql/updates/mysql</schemapath>
+		</schemas>
+	</update>
+
+	<!-- Site Main File Copy Section -->
+	<!-- Note the folder attribute: This attribute describes the folder
+		to copy FROM in the package to install therefore files copied
+		in this section are copied from /site/ in the package -->
+	<files folder="site">
+		<filename>index.html</filename>
+		<filename>helloworld.php</filename>
+		<filename>controller.php</filename>
+		<folder>views</folder>
+		<folder>models</folder>
+	</files>
+
+	<administration>
+		<!-- Administration Menu Section -->
+		<menu link='index.php?option=com_helloworld'>Hello World!</menu>
+		<!-- Administration Main File Copy Section -->
+		<!-- Note the folder attribute: This attribute describes the folder
+			to copy FROM in the package to install therefore files copied
+			in this section are copied from /admin/ in the package -->
+		<files folder="admin">
+			<!-- Admin Main File Copy Section -->
+			<filename>index.html</filename>
+			<filename>helloworld.php</filename>
+			<!-- SQL files section -->
+			<folder>sql</folder>
+			<!-- tables files section -->
+			<folder>tables</folder>
+			<!-- models files section -->
+			<folder>models</folder>
+		</files>
+	</administration>
+
+</extension>
+
+````
+
+### Total ficheros:
+***admin/sql/install.mysql.utf8.sql***
+***admin/sql/uninstall.mysql.utf8.sql***
+***admin/sql/updates/mysql/0.0.6.sql***
+---
+## 06.
 
 
 
