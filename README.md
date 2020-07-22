@@ -486,7 +486,7 @@ Basado en https://docs.joomla.org/J3.x:Developing_an_MVC_Component/es
 ````
 ````xml
 		<!-- The description is optional and defaults to the name -->
-		<description>Description of the Hello World component ...</description>
+		<description>Description of the Hello World component</description>
 
 		<update> <!-- Runs on update; New since J2.5 -->
 			<schemas>
@@ -640,7 +640,7 @@ Basado en https://docs.joomla.org/J3.x:Developing_an_MVC_Component/es
 ````
 ````xml
 		<!-- The description is optional and defaults to the name -->
-		<description>Description of the Hello World component ...</description>
+		<description>Description of the Hello World component</description>
 
 		<update> <!-- Runs on update -->
 			<schemas>
@@ -700,9 +700,9 @@ Basado en https://docs.joomla.org/J3.x:Developing_an_MVC_Component/es
 	DROP TABLE IF EXISTS `#__helloworld`;
 
 	CREATE TABLE `#__helloworld` (
-		`id`		INT(11)     NOT NULL AUTO_INCREMENT,
+		`id`		INT(11)		NOT NULL AUTO_INCREMENT,
 		`title`		VARCHAR(25)	NOT NULL,
-		`published` TINYINT(4)	NOT NULL DEFAULT '1',
+		`published`	TINYINT(4)	NOT NULL DEFAULT '1',
 		PRIMARY KEY (`id`)
 	) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 DEFAULT COLLATE=utf8mb4_unicode_ci;
 
@@ -715,75 +715,96 @@ Basado en https://docs.joomla.org/J3.x:Developing_an_MVC_Component/es
 ````
 * Actualizar el fichero `helloworld.xml`:
 ````xml
-<?xml version="1.0" encoding="utf-8"?>
-<extension type="component" version="3.0" method="upgrade">
+	<?xml version="1.0" encoding="utf-8"?>
+	<extension type="component" version="3.0" method="upgrade">
 
-	<name>Hello World!</name>
-	<!-- The following elements are optional and free of formatting constraints -->
-	<creationDate>January 2018</creationDate>
-	<author>John Doe</author>
-	<authorEmail>john.doe@example.org</authorEmail>
-	<authorUrl>http://www.example.org</authorUrl>
-	<copyright>Copyright Info</copyright>
-	<license>License Info</license>
-	<!--  The version string is recorded in the components table -->
-	<version>0.0.6</version>
-	<!-- The description is optional and defaults to the name -->
-	<description>Description of the Hello World component ...</description>
+		<name>Hello World!</name>
+		<!-- The following elements are optional and free of formatting constraints -->
+		<creationDate>January 2018</creationDate>
+		<author>John Doe</author>
+		<authorEmail>john.doe@example.org</authorEmail>
+		<authorUrl>http://www.example.org</authorUrl>
+		<copyright>Copyright Info</copyright>
+		<license>License Info</license>
+		<!-- The version string is recorded in the components table -->
+````
+````xml
+		<version>0.0.6</version>
+````
+````xml
+		<!-- The description is optional and defaults to the name -->
+		<description>Description of the Hello World component</description>
 
-	<install> <!-- Runs on install -->
-		<sql>
-			<file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
-		</sql>
-	</install>
-	<uninstall> <!-- Runs on uninstall -->
-		<sql>
-			<file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
-		</sql>
-	</uninstall>
-	<update> <!-- Runs on update; New since J2.5 -->
-		<schemas>
-			<schemapath type="mysql">sql/updates/mysql</schemapath>
-		</schemas>
-	</update>
+````xml
+		<install> <!-- Runs on install -->
+			<sql>
+				<file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+			</sql>
+		</install>
+		<uninstall> <!-- Runs on uninstall -->
+			<sql>
+				<file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+			</sql>
+		</uninstall>
+````
+````xml
+		<update> <!-- Runs on update -->
+			<schemas>
+				<schemapath type="mysql">sql/updates/mysql</schemapath>
+			</schemas>
+		</update>
 
-	<!-- Site Main File Copy Section -->
-	<!-- Note the folder attribute: This attribute describes the folder
-		to copy FROM in the package to install therefore files copied
-		in this section are copied from /site/ in the package -->
-	<files folder="site">
-		<filename>index.html</filename>
-		<filename>helloworld.php</filename>
-		<filename>controller.php</filename>
-		<folder>views</folder>
-		<folder>models</folder>
-	</files>
-
-	<administration>
-		<!-- Administration Menu Section -->
-		<menu link='index.php?option=com_helloworld'>Hello World!</menu>
-		<!-- Administration Main File Copy Section -->
-		<!-- Note the folder attribute: This attribute describes the folder
-			to copy FROM in the package to install therefore files copied
-			in this section are copied from /admin/ in the package -->
-		<files folder="admin">
-			<!-- Admin Main File Copy Section -->
+		<!-- Site Main File Copy Section -->
+		<!-- Note the folder attribute: This attribute describes the folder to copy FROM in the package to install therefore files copied in this section are copied from /site/ in the package -->
+		<files folder="site">
 			<filename>index.html</filename>
 			<filename>helloworld.php</filename>
-			<!-- SQL files section -->
-			<folder>sql</folder>
-			<!-- tables files section -->
-			<folder>tables</folder>
-			<!-- models files section -->
+			<filename>controller.php</filename>
+			<folder>views</folder>
 			<folder>models</folder>
 		</files>
-	</administration>
 
-</extension>
+		<administration>
+			<!-- Administration Menu Section -->
+			<menu link='index.php?option=com_helloworld'>Hello World!</menu>
+			<!-- Administration Main File Copy Section -->
+			<!-- Note the folder attribute: This attribute describes the folder to copy FROM in the package to install therefore files copied in this section are copied from /admin/ in the package -->
+			<files folder="admin">
+				<!-- Admin Main File Copy Section -->
+				<filename>index.html</filename>
+				<filename>helloworld.php</filename>
+				<!-- SQL files section -->
+				<folder>sql</folder>
+````
+````xml
+				<!-- tables files section -->
+				<folder>tables</folder>
+				<!-- models files section -->
+				<folder>models</folder>
+````
+````xml
+			</files>
+		</administration>
 
+	</extension>
+````
+* Actualizar el fichero `default.xml` en `site/views/helloworld/tmpl/default.xml`:
+````xml
+	<?xml version="1.0" encoding="utf-8"?>
+	<metadata>
+		<layout title="COM_HELLOWORLD_HELLOWORLD_VIEW_DEFAULT_TITLE">
+			<message>COM_HELLOWORLD_HELLOWORLD_VIEW_DEFAULT_DESC</message>
+		</layout>
+		<fields name="request" addfieldpath="/administrator/components/com_helloworld/models/fields">
+			<fieldset name="request">
+				<field name="id" type="helloworld" label="COM_HELLOWORLD_HELLOWORLD_FIELD_GREETING_LABEL" description="COM_HELLOWORLD_HELLOWORLD_FIELD_GREETING_DESC" />
+			</fieldset>
+		</fields>
+	</metadata>
 ````
 
 ### Total ficheros:
+
 ***admin/sql/install.mysql.utf8.sql***
 ***admin/sql/uninstall.mysql.utf8.sql***
 ***admin/sql/updates/mysql/0.0.6.sql***
