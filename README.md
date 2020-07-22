@@ -2,10 +2,10 @@
 Basado en https://docs.joomla.org/J3.x:Developing_an_MVC_Component/es
 
 [00. Inicializar los ficheros](README.md#00-inicializar-los-ficheros)
-01. Añadir una vista
-02. Añadir un elemento de menu
-03. Añadir un modelo
-04. Añadir una variable de peticion en el tipo de menu
+[01. Añadir una vista](README.md#01-añadir-una-vista)
+[02. Añadir un elemento de menu](README.md#02-añadir-un-elemento-de-menu)
+[03. Añadir un modelo](README.md#03-añadir-un-modelo)
+[04. Añadir una variable de peticion en el tipo de menu(README.md#04-añadir-una-cariable-de-peticion-en-el-tipo-de-menu)
 
 ## 00. Inicializar los ficheros
 * Crear el fichero `helloworld.xml`, que indica como instalar el componente `com_helloworld` en Joomla:
