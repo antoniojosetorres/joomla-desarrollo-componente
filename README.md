@@ -1,7 +1,7 @@
 # Joomla: Desarrollo de un componente MVC
 Basado en https://docs.joomla.org/J3.x:Developing_an_MVC_Component/es
 
-[00. Inicializar los ficheros]
+[00. Inicializar los ficheros](README.md#00-inicializar-los-ficheros)
 01. Añadir una vista
 02. Añadir un elemento de menu
 03. Añadir un modelo
