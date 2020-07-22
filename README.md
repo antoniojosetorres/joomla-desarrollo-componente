@@ -1,6 +1,12 @@
 # Joomla: Desarrollo de un componente MVC
 Basado en https://docs.joomla.org/J3.x:Developing_an_MVC_Component/es
 
+[00. Inicializar los ficheros]
+01. Añadir una vista
+02. Añadir un elemento de menu
+03. Añadir un modelo
+04. Añadir una variable de peticion en el tipo de menu
+
 ## 00. Inicializar los ficheros
 * Crear el fichero `helloworld.xml`, que indica como instalar el componente `com_helloworld` en Joomla:
 ````xml
@@ -267,13 +273,13 @@ Basado en https://docs.joomla.org/J3.x:Developing_an_MVC_Component/es
 ### Total 15 ficheros:
 01. helloworld.xml
 02. site/index.html
-03. _site/controller.php_   (nuevo)
+03*. _site/controller.php_
 04. site/helloworld.php
-05. _site/views/index.html_   (nuevo)
-06. _site/views/helloworld/index.html_   (nuevo)
-07. _site/views/helloworld/view.html.php_   (nuevo)
-08. _site/views/helloworld/tmpl/index.html_   (nuevo)
-09. _site/views/helloworld/tmpl/default.php_   (nuevo)
+05*. _site/views/index.html_
+06*. _site/views/helloworld/index.html_
+07*. _site/views/helloworld/view.html.php_
+08*. _site/views/helloworld/tmpl/index.html_
+09*. _site/views/helloworld/tmpl/default.php_
 10. admin/index.html
 11. admin/helloworld.php
 12. admin/sql/index.html
@@ -354,7 +360,7 @@ Basado en https://docs.joomla.org/J3.x:Developing_an_MVC_Component/es
 07. site/views/helloworld/view.html.php
 08. site/views/helloworld/tmpl/index.html
 09. site/views/helloworld/tmpl/default.php
-10. _site/views/helloworld/tmpl/default.xml_   (nuevo)
+10*. _site/views/helloworld/tmpl/default.xml_
 11. admin/index.html
 12. admin/helloworld.php
 13. admin/sql/index.html
@@ -521,8 +527,8 @@ Basado en https://docs.joomla.org/J3.x:Developing_an_MVC_Component/es
 02. site/index.html
 03. site/controller.php
 04. site/helloworld.php
-05. _site/models/index.html_   (nuevo)
-06. _site/models/helloworld.php_   (nuevo)
+05*. _site/models/index.html_
+06*. _site/models/helloworld.php_
 07. site/views/index.html
 08. site/views/helloworld/index.html
 09. site/views/helloworld/view.html.php
