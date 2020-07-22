@@ -82,18 +82,17 @@ Basado en https://docs.joomla.org/J3.x:Developing_an_MVC_Component/es
 
 ````
 ### Total 9 ficheros:
-1 helloworld.xml
-2 site/index.html
-3 site/helloworld.php
-4 admin/index.html
-5 admin/helloworld.php
-6 admin/sql/index.html
-7 admin/sql/updates/index.html
-8 admin/sql/updates/mysql/index.html
-9 admin/sql/updates/mysql/0.0.1.sql
-````
+01. helloworld.xml
+02. site/index.html
+03. site/helloworld.php
+04. admin/index.html
+05. admin/helloworld.php
+06. admin/sql/index.html
+07. admin/sql/updates/index.html
+08. admin/sql/updates/mysql/index.html
+09. admin/sql/updates/mysql/0.0.1.sql
 
-## 01. Añadir una vista a Hello World
+## 01. Añadir una vista
 * Actualizar el fichero `helloworld.php` en `site/helloworld.php`:  
 ````php
 	<?php
@@ -265,27 +264,24 @@ Basado en https://docs.joomla.org/J3.x:Developing_an_MVC_Component/es
 
 	</extension>
 ````
-
 ### Total 15 ficheros:
-````
-* helloworld.xml
-* site/index.html
-* site/controller.php   (nuevo)
-* site/helloworld.php
-* site/views/index.html   (nuevo)
-* site/views/helloworld/index.html   (nuevo)
-* site/views/helloworld/view.html.php   (nuevo)
-* site/views/helloworld/tmpl/index.html   (nuevo)
-* site/views/helloworld/tmpl/default.php   (nuevo)
-* admin/index.html
-* admin/helloworld.php
-* admin/sql/index.html
-* admin/sql/updates/index.html
-* admin/sql/updates/mysql/index.html
-* admin/sql/updates/mysql/0.0.1.sql
-````
+01. helloworld.xml
+02. site/index.html
+03. _site/controller.php_   (nuevo)
+04. site/helloworld.php
+05. _site/views/index.html_   (nuevo)
+06. _site/views/helloworld/index.html_   (nuevo)
+07. _site/views/helloworld/view.html.php_   (nuevo)
+08. _site/views/helloworld/tmpl/index.html_   (nuevo)
+09. _site/views/helloworld/tmpl/default.php_   (nuevo)
+10. admin/index.html
+11. admin/helloworld.php
+12. admin/sql/index.html
+13. admin/sql/updates/index.html
+14. admin/sql/updates/mysql/index.html
+15. admin/sql/updates/mysql/0.0.1.sql
 
-## 02. Añadir un elemento de menu a Hello World
+## 02. Añadir un elemento de menu
 * Crear el fichero `default.xml` en `site/views/helloworld/tmpl/default.xml`, que añade el elemento de menu predeterminado:  
 ````xml
 	<?xml version="1.0" encoding="utf-8"?>
@@ -348,28 +344,25 @@ Basado en https://docs.joomla.org/J3.x:Developing_an_MVC_Component/es
 
 	</extension>
 ````
-
 ### Total 16 ficheros:
-````
-* helloworld.xml
-* site/index.html
-* site/controller.php
-* site/helloworld.php
-* site/views/index.html
-* site/views/helloworld/index.html
-* site/views/helloworld/view.html.php
-* site/views/helloworld/tmpl/index.html
-* site/views/helloworld/tmpl/default.php
-* site/views/helloworld/tmpl/default.xml   (nuevo)
-* admin/index.html
-* admin/helloworld.php
-* admin/sql/index.html
-* admin/sql/updates/index.html
-* admin/sql/updates/mysql/index.html
-* admin/sql/updates/mysql/0.0.1.sql
-````
+01. helloworld.xml
+02. site/index.html
+03. site/controller.php
+04. site/helloworld.php
+05. site/views/index.html
+06. site/views/helloworld/index.html
+07. site/views/helloworld/view.html.php
+08. site/views/helloworld/tmpl/index.html
+09. site/views/helloworld/tmpl/default.php
+10. _site/views/helloworld/tmpl/default.xml_   (nuevo)
+11. admin/index.html
+12. admin/helloworld.php
+13. admin/sql/index.html
+14. admin/sql/updates/index.html
+15. admin/sql/updates/mysql/index.html
+16. admin/sql/updates/mysql/0.0.1.sql
 
-## 03. Añadir un modelo a Hello World
+## 03. Añadir un modelo
 * Crear la carpeta `models` en `site/models/` y el fichero `index.html` en `site/models/index.html`, que impide que se vea el contenido de la carpeta `models`:
 ````html
 	<html><body bgcolor='#fff'></body></html>
@@ -523,27 +516,47 @@ Basado en https://docs.joomla.org/J3.x:Developing_an_MVC_Component/es
 
 	</extension>
 ````
-
 ### Total 18 ficheros:
-````
-* helloworld.xml
-* site/index.html
-* site/controller.php
-* site/helloworld.php
-* site/models/index.html   (nuevo)
-* site/models/helloworld.php   (nuevo)
-* site/views/index.html
-* site/views/helloworld/index.html
-* site/views/helloworld/view.html.php
-* site/views/helloworld/tmpl/index.html
-* site/views/helloworld/tmpl/default.php
-* site/views/helloworld/tmpl/default.xml
-* admin/index.html
-* admin/helloworld.php
-* admin/sql/index.html
-* admin/sql/updates/index.html
-* admin/sql/updates/mysql/index.html
-* admin/sql/updates/mysql/0.0.1.sql
-````
+01. helloworld.xml
+02. site/index.html
+03. site/controller.php
+04. site/helloworld.php
+05. _site/models/index.html_   (nuevo)
+06. _site/models/helloworld.php_   (nuevo)
+07. site/views/index.html
+08. site/views/helloworld/index.html
+09. site/views/helloworld/view.html.php
+10. site/views/helloworld/tmpl/index.html
+11. site/views/helloworld/tmpl/default.php
+12. site/views/helloworld/tmpl/default.xml
+13. admin/index.html
+14. admin/helloworld.php
+15. admin/sql/index.html
+16. admin/sql/updates/index.html
+17. admin/sql/updates/mysql/index.html
+18. admin/sql/updates/mysql/0.0.1.sql
 
 ## 04. Añadir una variable de peticion en el tipo de menu
+* Actualizar el fichero `default.xml` en `site/views/helloworld/tmpl/default.xml`:
+````xml
+	<?xml version="1.0" encoding="utf-8"?>
+	<metadata>
+		<layout title="COM_HELLOWORLD_HELLOWORLD_VIEW_DEFAULT_TITLE">
+			<message>COM_HELLOWORLD_HELLOWORLD_VIEW_DEFAULT_DESC</message>
+		</layout>
+````
+````xml
+		<fields name="request">
+			<fieldset name="request">
+				<field name="id" type="list" label="COM_HELLOWORLD_HELLOWORLD_FIELD_GREETING_LABEL" description="COM_HELLOWORLD_HELLOWORLD_FIELD_GREETING_DESC" default="1">
+					<option value="1">Hello World!</option>
+                    <option value="2">Good bye World!</option>
+				</field>
+			</fieldset>
+		</fields>
+	</metadata>
+````
+
+
+
+
