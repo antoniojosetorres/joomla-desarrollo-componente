@@ -736,7 +736,7 @@ Basado en https://docs.joomla.org/J3.x:Developing_an_MVC_Component/es
 ````xml
 		<!-- The description is optional and defaults to the name -->
 		<description>Description of the Hello World component</description>
-
+````
 ````xml
 		<install> <!-- Runs on install -->
 			<sql>
@@ -816,7 +816,7 @@ Basado en https://docs.joomla.org/J3.x:Developing_an_MVC_Component/es
 ````html
 	<html><body bgcolor='#fff'></body></html>
 ````
-* Crear el fichero `helloworld.php` en `admin/models/fields/helloworld.php`, que:
+* Crear el fichero `helloworld.php` en `admin/models/fields/helloworld.php`:
 ````php
 	<?php
 	/**
@@ -959,7 +959,7 @@ Basado en https://docs.joomla.org/J3.x:Developing_an_MVC_Component/es
 ````html
 	<html><body bgcolor='#fff'></body></html>
 ````
-* Crear el fichero `helloworld.php` en `admin/tables/helloworld.php`, que:
+* Crear el fichero `helloworld.php` en `admin/tables/helloworld.php`:
 ````php
 	<?php
 	/**
