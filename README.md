@@ -91,14 +91,14 @@ Basado en https://docs.joomla.org/J3.x:Developing_an_MVC_Component/es
 ````
 ### Total 9 ficheros:
 1. helloworld.xml
-2. site/index.html
-3. site/helloworld.php
-4. admin/index.html
-5. admin/helloworld.php
-6. admin/sql/index.html
-7. admin/sql/updates/index.html
-8. admin/sql/updates/mysql/index.html
-9. admin/sql/updates/mysql/0.0.1.sql
+2. admin/index.html
+3. admin/helloworld.php
+4. admin/sql/index.html
+5. admin/sql/updates/index.html
+6. admin/sql/updates/mysql/index.html
+7. admin/sql/updates/mysql/0.0.1.sql
+8. site/index.html
+9. site/helloworld.php
 ---
 ## 01. Añadir una vista
 * Actualizar el fichero `helloworld.php` en `site/helloworld.php`:  
@@ -274,20 +274,20 @@ Basado en https://docs.joomla.org/J3.x:Developing_an_MVC_Component/es
 ````
 ### Total 15 ficheros:
 1. helloworld.xml
-2. site/index.html
-3. ***site/controller.php***
-4. site/helloworld.php
-5. ***site/views/index.html***
-6. ***site/views/helloworld/index.html***
-7. ***site/views/helloworld/view.html.php***
-8. ***site/views/helloworld/tmpl/index.html***
-9. ***site/views/helloworld/tmpl/default.php***
-10. admin/index.html
-11. admin/helloworld.php
-12. admin/sql/index.html
-13. admin/sql/updates/index.html
-14. admin/sql/updates/mysql/index.html
-15. admin/sql/updates/mysql/0.0.1.sql
+2. admin/index.html
+3. admin/helloworld.php
+4. admin/sql/index.html
+5. admin/sql/updates/index.html
+6. admin/sql/updates/mysql/index.html
+7. admin/sql/updates/mysql/0.0.1.sql
+8. site/index.html
+9. ***site/controller.php***
+10. site/helloworld.php
+11. ***site/views/index.html***
+12. ***site/views/helloworld/index.html***
+13. ***site/views/helloworld/view.html.php***
+14. ***site/views/helloworld/tmpl/index.html***
+15. ***site/views/helloworld/tmpl/default.php***
 ---
 ## 02. Añadir un elemento de menu
 * Crear el fichero `default.xml` en `site/views/helloworld/tmpl/default.xml`, que añade el elemento de menu predeterminado:  
@@ -354,21 +354,21 @@ Basado en https://docs.joomla.org/J3.x:Developing_an_MVC_Component/es
 ````
 ### Total 16 ficheros:
 1. helloworld.xml
-2. site/index.html
-3. site/controller.php
-4. site/helloworld.php
-5. site/views/index.html
-6. site/views/helloworld/index.html
-7. site/views/helloworld/view.html.php
-8. site/views/helloworld/tmpl/index.html
-9. site/views/helloworld/tmpl/default.php
-10. ***site/views/helloworld/tmpl/default.xml***
-11. admin/index.html
-12. admin/helloworld.php
-13. admin/sql/index.html
-14. admin/sql/updates/index.html
-15. admin/sql/updates/mysql/index.html
-16. admin/sql/updates/mysql/0.0.1.sql
+2. admin/index.html
+3. admin/helloworld.php
+4. admin/sql/index.html
+5. admin/sql/updates/index.html
+6. admin/sql/updates/mysql/index.html
+7. admin/sql/updates/mysql/0.0.1.sql
+8. site/index.html
+9. site/controller.php
+10. site/helloworld.php
+11. site/views/index.html
+12. site/views/helloworld/index.html
+13. site/views/helloworld/view.html.php
+14. site/views/helloworld/tmpl/index.html
+15. site/views/helloworld/tmpl/default.php
+16. ***site/views/helloworld/tmpl/default.xml***
 ---
 ## 03. Añadir un modelo
 * Crear la carpeta `models` en `site/models/` y el fichero `index.html` en `site/models/index.html`, que impide que se vea el contenido de la carpeta `models`:
@@ -526,23 +526,23 @@ Basado en https://docs.joomla.org/J3.x:Developing_an_MVC_Component/es
 ````
 ### Total 18 ficheros:
 1. helloworld.xml
-2. site/index.html
-3. site/controller.php
-4. site/helloworld.php
-5. ***site/models/index.html***
-6. ***site/models/helloworld.php***
-7. site/views/index.html
-8. site/views/helloworld/index.html
-9. site/views/helloworld/view.html.php
-10. site/views/helloworld/tmpl/index.html
-11. site/views/helloworld/tmpl/default.php
-12. site/views/helloworld/tmpl/default.xml
-13. admin/index.html
-14. admin/helloworld.php
-15. admin/sql/index.html
-16. admin/sql/updates/index.html
-17. admin/sql/updates/mysql/index.html
-18. admin/sql/updates/mysql/0.0.1.sql
+2. admin/index.html
+3. admin/helloworld.php
+4. admin/sql/index.html
+5. admin/sql/updates/index.html
+6. admin/sql/updates/mysql/index.html
+7. admin/sql/updates/mysql/0.0.1.sql
+8. site/index.html
+9. site/controller.php
+10. site/helloworld.php
+11. ***site/models/index.html***
+12. ***site/models/helloworld.php***
+13. site/views/index.html
+14. site/views/helloworld/index.html
+15. site/views/helloworld/view.html.php
+16. site/views/helloworld/tmpl/index.html
+17. site/views/helloworld/tmpl/default.php
+18. site/views/helloworld/tmpl/default.xml
 ---
 ## 04. Añadir una variable de peticion en el tipo de menu
 * Actualizar el fichero `default.xml` en `site/views/helloworld/tmpl/default.xml`:
@@ -562,6 +562,8 @@ Basado en https://docs.joomla.org/J3.x:Developing_an_MVC_Component/es
 				</field>
 			</fieldset>
 		</fields>
+````
+````xml
 	</metadata>
 ````
 * Actualizar el fichero `helloworld.php` en `site/models/helloworld.php`:
@@ -676,23 +678,23 @@ Basado en https://docs.joomla.org/J3.x:Developing_an_MVC_Component/es
 ````
 ### Total 18 ficheros:
 1. helloworld.xml
-2. site/index.html
-3. site/controller.php
-4. site/helloworld.php
-5. site/models/index.html
-6. site/models/helloworld.php
-7. site/views/index.html
-8. site/views/helloworld/index.html
-9. site/views/helloworld/view.html.php
-10. site/views/helloworld/tmpl/index.html
-11. site/views/helloworld/tmpl/default.php
-12. site/views/helloworld/tmpl/default.xml
-13. admin/index.html
-14. admin/helloworld.php
-15. admin/sql/index.html
-16. admin/sql/updates/index.html
-17. admin/sql/updates/mysql/index.html
-18. admin/sql/updates/mysql/0.0.1.sql
+2. admin/index.html
+3. admin/helloworld.php
+4. admin/sql/index.html
+5. admin/sql/updates/index.html
+6. admin/sql/updates/mysql/index.html
+7. admin/sql/updates/mysql/0.0.1.sql
+8. site/index.html
+9. site/controller.php
+10. site/helloworld.php
+11. site/models/index.html
+12. site/models/helloworld.php
+13. site/views/index.html
+14. site/views/helloworld/index.html
+15. site/views/helloworld/view.html.php
+16. site/views/helloworld/tmpl/index.html
+17. site/views/helloworld/tmpl/default.php
+18. site/views/helloworld/tmpl/default.xml
 ---
 ## 05. Utilizando la base de datos
 * Crear el fichero `install.mysql.utf8.sql` en `admin/sql/install.mysql.utf8.sql`, que se ejecuta cuando se realiza la instalacion del componente `helloworld`:
@@ -795,19 +797,227 @@ Basado en https://docs.joomla.org/J3.x:Developing_an_MVC_Component/es
 		<layout title="COM_HELLOWORLD_HELLOWORLD_VIEW_DEFAULT_TITLE">
 			<message>COM_HELLOWORLD_HELLOWORLD_VIEW_DEFAULT_DESC</message>
 		</layout>
+````
+````xml
 		<fields name="request" addfieldpath="/administrator/components/com_helloworld/models/fields">
 			<fieldset name="request">
 				<field name="id" type="helloworld" label="COM_HELLOWORLD_HELLOWORLD_FIELD_GREETING_LABEL" description="COM_HELLOWORLD_HELLOWORLD_FIELD_GREETING_DESC" />
 			</fieldset>
+````			
+````xml			
 		</fields>
 	</metadata>
 ````
+* Crear la carpeta `models` en `admin/models/`y el fichero `index.html` en `admin/models/index.html`, que impide que se vea el contenido de la carpeta `models`:
+````html
+	<html><body bgcolor='#fff'></body></html>
+````
+* Crear la carpeta `fields`en `admin/models/fields/` y el fichero `index.html` en `admin/models/fields/index.html`, que impide que se vea la carpeta `fields`:
+````html
+	<html><body bgcolor='#fff'></body></html>
+````
+* Crear el fichero `helloworld.php` en `admin/models/fields/helloworld.php`, que:
+````php
+	<?php
+	/**
+ 	 * @package     Joomla.Administrator
+ 	 * @subpackage  com_helloworld
+ 	 *
+ 	 * @copyright   Copyright (C) 2005 - 2018 Open Source Matters, Inc. All rights reserved.
+ 	 * @license     GNU General Public License version 2 or later; see LICENSE.txt
+ 	 */
 
-### Total ficheros:
+	// No direct access to this file
+	defined('_JEXEC') or die('Restricted access');
 
-***admin/sql/install.mysql.utf8.sql***
-***admin/sql/uninstall.mysql.utf8.sql***
-***admin/sql/updates/mysql/0.0.6.sql***
+	JFormHelper::loadFieldClass('list');
+
+	/**
+ 	 * HelloWorld Form Field class for the HelloWorld component
+ 	 *
+ 	 * @since  0.0.1
+ 	 */
+	class JFormFieldHelloWorld extends JFormFieldList
+	{
+		/**
+	 	 * The field type.
+	 	 *
+	 	 * @var         string
+	 	 */
+		protected $type = 'HelloWorld';
+
+		/**
+	 	 * Method to get a list of options for a list input.
+	 	 *
+	 	 * @return  array  An array of JHtml options.
+	 	 */
+		protected function getOptions()
+		{
+			$db    = JFactory::getDBO();
+			$query = $db->getQuery(true);
+			$query->select('id,title');
+			$query->from('#__helloworld');
+			$db->setQuery((string) $query);
+			$messages = $db->loadObjectList();
+			$options  = array();
+
+			if ($messages)
+			{
+				foreach ($messages as $message)
+				{
+					$options[] = JHtml::_('select.option', $message->id, $message->title);
+				}
+			}
+
+			$options = array_merge(parent::getOptions(), $options);
+
+			return $options;
+		}
+	}
+````
+* Actualizar el fichero `helloworld.php` en `site/models/helloworld.php`:
+````php
+	<?php
+	/**
+ 	 * @package     Joomla.Administrator
+ 	 * @subpackage  com_helloworld
+ 	 *
+ 	 * @copyright   Copyright (C) 2005 - 2018 Open Source Matters, Inc. All rights reserved.
+ 	 * @license     GNU General Public License version 2 or later; see LICENSE.txt
+ 	 */
+
+	// No direct access to this file
+	defined('_JEXEC') or die('Restricted access');
+
+	/**
+ 	 * HelloWorld Model
+ 	 *
+ 	 * @since  0.0.1
+ 	 */
+	class HelloWorldModelHelloWorld extends JModelItem
+	{
+````
+````php
+		/**
+	 	 * @var array messages
+	 	 */
+		protected $messages;
+
+		/**
+	 	 * Method to get a table object, load it if necessary.
+	 	 *
+	 	 * @param   string  $type    The table name. Optional.
+	 	 * @param   string  $prefix  The class prefix. Optional.
+	 	 * @param   array   $config  Configuration array for model. Optional.
+	 	 *
+	 	 * @return  JTable  A JTable object
+	 	 *
+	 	 * @since   1.6
+	 	 */
+		public function getTable($type = 'HelloWorld', $prefix = 'HelloWorldTable', $config = array())
+		{
+			return JTable::getInstance($type, $prefix, $config);
+		}
+
+		/**
+	 	 * Get the message
+	 	 *
+	 	 * @param   integer  $id  Greeting Id
+	 	 *
+	 	 * @return  string        Fetched String from Table for relevant Id
+	 	 */
+		public function getMsg($id = 1)
+		{
+			if (!is_array($this->messages))
+			{
+				$this->messages = array();
+			}
+
+			if (!isset($this->messages[$id]))
+			{
+				// Request the selected id
+				$jinput = JFactory::getApplication()->input;
+				$id     = $jinput->get('id', 1, 'INT');
+
+				// Get a TableHelloWorld instance
+				$table = $this->getTable();
+
+				// Load the message
+				$table->load($id);
+
+				// Assign the message
+				$this->messages[$id] = $table->greeting;
+			}
+
+			return $this->messages[$id];
+````
+````php
+		}
+	}
+````
+* Crear la carpeta `tables` en `admin/tables/`y el fichero `index.html` en `admin/tables/index.html`, que impide que se vea el contenido de la carpeta `tables`:
+````html
+	<html><body bgcolor='#fff'></body></html>
+````
+* Crear el fichero `helloworld.php` en `admin/tables/helloworld.php`, que:
+````php
+	<?php
+	/**
+ 	 * @package     Joomla.Administrator
+ 	 * @subpackage  com_helloworld
+ 	 *
+ 	 * @copyright   Copyright (C) 2005 - 2018 Open Source Matters, Inc. All rights reserved.
+ 	 * @license     GNU General Public License version 2 or later; see LICENSE.txt
+ 	 */
+
+	// No direct access
+	defined('_JEXEC') or die('Restricted access');
+
+	/**
+ 	 * Hello Table class
+ 	 *
+ 	 * @since  0.0.1
+ 	 */
+	class HelloWorldTableHelloWorld extends JTable
+	{
+		/**
+	 	 * Constructor
+	 	 *
+	 	 * @param   JDatabaseDriver  &$db  A database connector object
+	 	 */
+		function __construct(&$db)
+		{
+			parent::__construct('#__helloworld', 'id', $db);
+		}
+	}
+````
+### Total 26 ficheros:
+1. helloworld.xml
+2. admin/index.html
+3. admin/helloworld.php
+4. ***admin/models/index.html***
+5. ***admin/models/fields/index.html***
+6. ***admin/models/fields/helloworld.php***
+7. admin/sql/index.html
+8. admin/sql/updates/index.html
+9. ***admin/sql/install.mysql.utf8.sql***
+10. ***admin/sql/uninstall.mysql.utf8.sql***
+11. admin/sql/updates/mysql/index.html
+12. admin/sql/updates/mysql/0.0.1.sql
+13. ***admin/sql/updates/mysql/0.0.6.sql***
+14. ***admin/tables/index.html***
+15. ***admin/tables/helloworld.php***
+16. site/index.html
+17. site/controller.php
+18. site/helloworld.php
+19. site/models/index.html
+20. site/models/helloworld.php
+21. site/views/index.html
+22. site/views/helloworld/index.html
+23. site/views/helloworld/view.html.php
+24. site/views/helloworld/tmpl/index.html
+25. site/views/helloworld/tmpl/default.php
+26. site/views/helloworld/tmpl/default.xml
 ---
 ## 06.
 
